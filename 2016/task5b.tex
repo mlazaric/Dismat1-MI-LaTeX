@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Odredi koeficijent uz član \( x^n \) u sljedećim izrazima
+	
+	\[ (1 + 2x + 3x^2 + \cdots)^2 \]
+	
+	Poznata nam je funkcija izvodnica za unutarnji niz \( \sum\limits^\infty_{n=0} (n + 1) x^n = \frac{1}{(1 - x)^2} \), pa ju uvrstimo.
+	
+	\[ \left ( \frac{1}{(1 - x)^2} \right )^2 = \frac{1}{(1 - x)^4} \]
+	
+	Također nam je poznata funkcija izvodnica \( \frac{1}{(1 - x)^t} = \sum\limits^\infty_{n=0} \binom{n + t - 1}{n} x^n \), pa za \( t = 4 \) dobijemo: 
+	
+	\[ \frac{1}{(1 - x)^4} = \sum\limits^\infty_{n=0} \binom{n + 3}{n} x^n \]
+	
+	Iz toga slijedi rješenje:
+	
+	\[ [x^n] = \binom{n + 3}{n} \]
+\end{document}
