@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Zamjenom poretka sumacije, izračunaj sumu \( \displaystyle \sum\limits^n_{k=0} \sum\limits^n_{j=k} \binom{n}{j} \binom{j}{k} \)
+	
+	Zamjenimo poredak sumacije
+	
+	\[ \sum\limits^n_{j=0} \sum\limits^j_{k=0} \binom{n}{j} \binom{j}{k} \]
+	
+	Izvadimo prvi binomni koeficijent izvan unutarnje sume jer ne ovisi o \( k \).
+	
+	\[ \sum\limits^n_{j=0} \binom{n}{j} \sum\limits^j_{k=0} \binom{j}{k} \]
+	
+	Vrijedi \( \displaystyle \sum\limits^n_{k=0} \binom{n}{k} = 2^n \), pa možemo riješiti unutarnju sumu:
+	
+	\[ \sum\limits^n_{j=0} \binom{n}{j} 2^j \]
+	
+	Također raspis binoma je \( \displaystyle (x + 1)^n = \sum\limits^n_{k=0} \binom{n}{k} x^n \). Ako uvrstimo \( x = 2 \) dobijemo istu sumu pa vrijedi:
+	
+	\[ \sum\limits^n_{j=0} \binom{n}{j} 2^j = (2 + 1)^n = 3^n \]
+\end{document}
