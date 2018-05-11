@@ -1,0 +1,21 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Dokaži sljedeće identitete za Fibonaccijeve brojeve:
+	
+	b) \( F^2_{n + 2} - F^2_{n + 1} + F^2_{n + 3} = 2 F_{n + 2} F_{n + 3} \)
+	
+	\begin{align*}
+		F^2_{n + 2} - F^2_{n + 1} + F^2_{n + 3} &= (F_{n + 2} - F_{n + 1})(F_{n + 2} + F_{n + 1}) + F^2_{n + 3} \\
+		&= F_n (F_{n + 2} + F_{n + 1}) + F^2_{n + 3} \\
+		&= F_n F_{n + 3} + F^2_{n + 3} \\
+		&= F_{n + 3} ( F_n + F_{n + 3} ) \\
+		&= F_{n + 3} ( F_n + F_{n + 2} + F_{n + 1} ) \\
+		&= F_{n + 3} ( F_{n + 2} + F_{n + 2} ) \\
+		&= 2 F_{n + 3} F_{n + 2} 
+	\end{align*}
+\end{document}
