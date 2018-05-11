@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Izvedi formulu za funkciju izvodnicu
+	
+	b) Fibonaccijevih brojeva
+	
+	Koristimo temeljnu relaciju Fibonaccijevih brojeva:
+	
+	\[ F_n = F_{n - 1} + F_{n - 2} \]
+	
+	To riješimo standardnim postupkom za rješavanje rekurzije preko funkcija izvodnica, prvo možemo sve prenijeti na lijevu stranu.
+	
+	\[ F_n - F_{n - 1} - F_{n - 2} = 0 \]
+	
+	Onda odredimo funkciju izvodnicu za svaki član. \\
+	
+	Prvi član nam je funkcija izvodnica Fibonaccijevih brojeva: 
+	\[ F(x) = F_0 + F_1 x + F_2 x^2 + \cdots \]
+	
+	Drugi član nam je funkcija izvodnica Fibonaccijevih brojeva pomaknuta za jedan i s negativnim predznakom:
+	\[ - x F(x) = - F_0 x - F_1 x^2 - F_2 x^3 - \cdots \]
+	
+	Treći član nam je funkcija izvodnica Fibonaccijevih brojeva pomaknuta za dva i s negativnim predznakom:
+	\[ - x^2 F(x) = - F_0 x^2 - F_1 x^3 - F_2 x^4 - \cdots \]
+	
+	Onda zbrojimo te tri jednadžbe i grupiramo članove po potencijama x.
+	\[ F(x) - x F(x) - x^2 F(x) = F_0 + x (F_1 - F_0) + x^2 (F_2 - F_1 - F_0) + \cdots \]
+	
+	Od \( n = 2 \) nadalje će vrijediti \[ F_n - F_{n - 1} - F_{n - 2} = 0 \] pa nam preostaju slobodni član i prva potencija:
+	\[ F(x) - x F(x) - x^2 F(x) = F_0 + x (F_1 - F_0) \]
+	
+	Uvrstimo \( F_0 = 0 \) i \( F_1 = 1 \), te faktoriziramo lijevu stranu.
+	\[ F(x)(1 - x - x^2) = x \]
+	
+	Podijelimo i dobili smo rješenje:
+	\[ F(x) = \frac{x}{1 - x - x^2} \]
+\end{document}
