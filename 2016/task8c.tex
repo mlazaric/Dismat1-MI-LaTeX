@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Dokaži sljedeće identitete za Fibonaccijeve brojeve:
+	
+	c) \( F^2_1 + F^2_2 + F^2_3 + \cdots + F^2_n = F_n F_{n + 1} \) \\
+	
+	Za ovaj tip dokaza identiteta nam je najjednostavnije koristiti matematičku indukciju. \\
+	
+	Baza \(n = 1\)
+	\[ F^2_1 = 1 = F_1 F_2 = 1 \] \\
+	
+	Pretpostavka
+	\[ F^2_1 + F^2_2 + F^2_3 + \cdots + F^2_n = F_n F_{n + 1} \] \\
+	
+	Korak
+	\begin{align*}
+		F^2_1 + F^2_2 + F^2_3 + \cdots + F^2_n + F^2_{n + 1} &= F_{n + 1} F_{n + 2} \\
+		F^2_1 + F^2_2 + F^2_3 + \cdots + F^2_n + F^2_{n + 1} &= F_n F_{n + 1} + F^2_{n + 1} && \text{Uvrstimo pretpostavku} \\
+		&= F_{n + 1} (F_n + F_{n + 1}) \\
+		&= F_{n + 1} F_{n + 2}
+	\end{align*}
+\end{document}
