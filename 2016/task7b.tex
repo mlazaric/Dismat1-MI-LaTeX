@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+	Opravdaj vezu Catalanovog broja \( C_4 = 14 \) i sljedećih skupova: 
+	
+	c) Permutacija skupa {1, 2, 3, 4} s opadajućim podnizom duljine najviše 2 \\ \\
+	
+	Raspišemo sve permutacije pa eliminiramo one koje ne zadovoljavaju kriterij.
+	
+	
+	\begin{center}
+		\begin{tabular}{ cccc } 
+	 		1234 & 2134 & 3124 & 4123 \\
+			1243 & 2143 & 3142 & \underline{4}1\underline{32} \\
+			1324 & 2314 & \underline{321}4 & \underline{421}3 \\
+			1342 & 2341 & \underline{32}4\underline{1} & \underline{4}2\underline{31} \\ 
+			1423 & 2413 & 3412 & \underline{431}2 \\ 
+			1\underline{432} & 2\underline{431} & \underline{3}4\underline{21} & \underline{4321}
+		\end{tabular}
+	\end{center}
+	
+	Podcrtani dio ne zadovoljava uvjet pa njih maknemo, rješenje je:
+	
+	\begin{center}
+		\begin{tabular}{ cccc } 
+	 		1234 & 2134 & 3124 & 4123 \\
+			1243 & 2143 & 3142 & ---  \\
+			1324 & 2314 & ---  & ---  \\
+			1342 & 2341 & ---  & ---  \\ 
+			1423 & 2413 & 3412 & ---  \\ 
+			---  & ---  & ---  & ---
+		\end{tabular}
+	\end{center}
+\end{document}
