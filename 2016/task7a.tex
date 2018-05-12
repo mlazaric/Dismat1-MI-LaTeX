@@ -1,0 +1,186 @@
+\documentclass{article}
+
+\usepackage[croatian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{tikz}
+
+\usetikzlibrary{math}
+
+\begin{document}
+	Opravdaj vezu Catalanovog broja \( C_4 = 14 \) i sljedećih skupova: 
+	
+	a) Skupa ravninskih stabala s pet vrhova \\ \\
+	
+	\begin{tikzpicture}
+		\tikzmath{\x = 0.8; \y = -0.8; \r = 1/16;}
+		
+		\begin{scope}
+			\draw (0,0) -- (0,4*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (0,3*\y) circle[radius=\r];
+			\filldraw[fill=black] (0,4*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(2*\x,0)}]
+			\draw (0,0) -- (0,2*\y);
+			\draw (0,2*\y) -- (-\x,3*\y);
+			\draw (0,2*\y) -- (\x,3*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,3*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,3*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(5*\x,0)}]
+			\draw (0,0) -- (0,1*\y);
+			\draw (0,1*\y) -- (-\x,2*\y) -- (-\x,3*\y);
+			\draw (0,1*\y) -- (\x,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,3*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(8*\x,0)}]
+			\draw (0,0) -- (0,1*\y);
+			\draw (0,1*\y) -- (-\x,2*\y);
+			\draw (0,1*\y) -- (\x,2*\y) -- (\x,3*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,3*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(0,6*\y)}]
+			\draw (0,0) -- (-\x,1*\y) -- (-\x,3*\y);
+			\draw (0,0) -- (\x,1*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (-\x,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,1*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,3*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(3*\x,6*\y)}]
+			\draw (0,0) -- (-\x,1*\y);
+			\draw (0,0) -- (\x,1*\y) -- (\x,3*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,3*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(6*\x,6*\y)}]
+			\draw (0,0) -- (-\x,1*\y) -- (-\x,2*\y);
+			\draw (0,0) -- (\x,1*\y) -- (\x,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(9*\x,6*\y)}]
+			\draw (0,0) -- (-\x,1*\y);
+			\draw (0,0) -- (\x,1*\y) -- (2*\x,2*\y);
+			\draw (\x,1*\y) -- (0,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (2*\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(0,11*\y)}]
+			\draw (0,0) -- (-\x,1*\y) -- (-2*\x,2*\y);
+			\draw (0,0) -- (\x,1*\y);
+			\draw (-\x,1*\y) -- (0,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-2*\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(3*\x,11*\y)}]
+			\draw (0,0) -- (0,2*\y);
+			\draw (0,1*\y) -- (\x,2*\y);
+			\draw (0,1*\y) -- (-\x,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(6*\x,11*\y)}]
+			\draw (0,0) -- (0,\y);
+			\draw (0,0) -- (\x,\y);
+			\draw (0,0) -- (-\x,\y);
+			\draw (-\x,\y) -- (-\x,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(9*\x,11*\y)}]
+			\draw (0,0) -- (0,\y);
+			\draw (0,0) -- (\x,\y);
+			\draw (0,0) -- (-\x,\y);
+			\draw (0,\y) -- (0,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (0,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(0,15*\y)}]
+			\draw (0,0) -- (0,\y);
+			\draw (0,0) -- (\x,\y);
+			\draw (0,0) -- (-\x,\y);
+			\draw (\x,\y) -- (\x,2*\y);
+			
+			\filldraw[fill=black] (0,0) circle[radius=\r];
+			\filldraw[fill=black] (0,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,2*\y) circle[radius=\r];
+		\end{scope}
+		
+		\begin{scope}[shift={(4*\x,15*\y)}]
+			\draw (\x/2,0) -- (-\x,\y);
+			\draw (\x/2,0) -- (0,\y);
+			\draw (\x/2,0) -- (\x,\y);
+			\draw (\x/2,0) -- (2*\x,\y);
+			
+			\filldraw[fill=black] (\x/2,0) circle[radius=\r];
+			\filldraw[fill=black] (0,\y) circle[radius=\r];
+			\filldraw[fill=black] (\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (-\x,\y) circle[radius=\r];
+			\filldraw[fill=black] (2*\x,\y) circle[radius=\r];
+		\end{scope}
+	\end{tikzpicture}
+\end{document}
