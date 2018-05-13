@@ -9,5 +9,35 @@
 	
 	\[ C(x) = \sum\limits^\infty_{n=0} x^n C_n \]
 	
-	\[ C(x) - C_0 = \sum\limits^\infty_{n=0} x^{n + 1} C_{n + 1} = \sum\limits^\infty_{n=0} x^{n + 1} \sum\limits^n_{k=0} C_k C_{n - k} \]
+	Onda izdvojimo \( C_0 \) iz sume.
+	
+	\[ C(x) = C_0 + 	\sum\limits^\infty_{n=1} x^n C_n \]
+	
+	Pomaknemo indeks sumacije i prebacimo \( C_0 \) na lijevu stranu.
+	
+	\[ C(x) - C_0 = 	\sum\limits^\infty_{n=0} x^{n + 1} C_{n + 1} \]
+	
+	Tada uvrstimo osnovnu relaciju Catalanovih brojeva \( C_{n + 1} = \sum\limits^n_{k=0} C_k C_{n - k} \).
+	
+	\[ C(x) - C_0 = 	\sum\limits^\infty_{n=0} x^{n + 1} \sum\limits^n_{k=0} C_k C_{n - k} \]
+	
+	Na desnoj strani izvadimo \( x \) ispred sume kako bismo imali \( x^n \).
+	
+	\[ C(x) - C_0 = 	x \sum\limits^\infty_{n=0} x^n \sum\limits^n_{k=0} C_k C_{n - k} \]
+	
+	Uočimo da je na desnoj strani Cauchyjev produkt redova koji glasi \( A(x) B(x) = \sum\limits^\infty_{n=0} x^n \sum\limits^n_{k=0} a_k b_{n - k} \), a u našem slučaju su oba reda \( C(x) \).
+	
+	\[ C(x) - C_0 = 	x C(x)^2 \]
+	
+	Prebacimo sve na desnu stranu i uvrstimo \( C_0 = 1 \).
+	
+	\[ 0 = 	x C(x)^2 - C(x) + 1 \]
+	
+	Riješimo kvadratnu jednadžbu i dobijemo dva rješenja.
+	
+	\[ C(x) = \frac{1}{2x} \left ( 1 \pm \sqrt{1 - 4x} \right ) \]
+	
+	Odaberemo \( - \), zato što za \( + \) funkcija teži k \( + \infty \) kada x teži k \( 0 \), pa je konačno rješenje:
+	
+	\[ C(x) = \frac{1}{2x} \left ( 1 - \sqrt{1 - 4x} \right ) \]
 \end{document}
