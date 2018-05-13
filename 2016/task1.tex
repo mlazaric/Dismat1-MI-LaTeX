@@ -21,32 +21,32 @@
 	
 	\[ S_{n + 1} = r + 2^{-n-1} (a(n + 1) + b) \]
 	
-	Također vrijedi i
+	Također vrijedi i:
 	\begin{align*}
 		S_{n + 1} &= S_n + a_{n + 1} \\
 		&= S_n + 2^{-n - 1} (n + 1 + 2)  \\
 		&= r + 2^{-n} (an + b) + 2^{-n-1} (n + 3) 
 	\end{align*}
 	
-	Izjednačimo jednadžbe
+	Izjednačimo jednadžbe.
 	
 	\[ r + 2^{-n-1} (a(n + 1) + b) = r + 2^{-n} (an + b) + 2^{-n-1} (n + 3) \] 
 	
-	Pokratimo \( r \)
+	Pokratimo \( r \).
 	
 	\[ 2^{-n-1} (a(n + 1) + b) = 2^{-n} (an + b) + 2^{-n-1} (n + 3) \]
 	
-	Pomnožimo s \( 2^{n+1} \)
+	Pomnožimo s \( 2^{n+1} \).
 	
 	\[ a(n + 1) + b = 2 (an + b) +  n + 3 \]
 	
-	Iz toga slijedi sustav jednadžbi
+	Iz toga slijedi sustav jednadžbi:
 	\begin{align*}
 		a &= 2a + 1 \\
 		a + b &= 2b + 3
 	\end{align*}
 	
-	Pa dobijemo 
+	Pa dobijemo:
 	\begin{align*}
 		a &= -1 \\
 		b &= -4
@@ -55,9 +55,7 @@
 	To uvrstimo natrag u formulu za \( S_n \) i izračunamo \( S_1 \) kako bismo izračunali \( r \).
 	\begin{align*}
 		S_1 &= \frac{3}{2} \\ 
-		\\
 		\frac{3}{2} &= r + \frac{-1 \cdot 1 - 4}{2} \\
-		\\	
 		r &= 4
 	\end{align*}
 	

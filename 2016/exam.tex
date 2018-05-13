@@ -1,16 +1,17 @@
-\documentclass[a4paper,a4wide]{article}
+\documentclass[a4paper]{article}
 \usepackage{subfiles}
 
 \usepackage[croatian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{a4wide}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{tikz}
+\usepackage{tocloft}
 
 \usetikzlibrary{math}
 
-\setcounter{secnumdepth}{0}
 \newcounter{tasknumber}
 \newcounter{subtasknumber}[tasknumber]
 
@@ -29,8 +30,17 @@
 	\addcontentsline{toc}{subsection}{Zadatak \thetasknumber. \alph{subtasknumber})}
 }
 \renewcommand{\thesubtask}{\thetasknumber. \alph{subtasknumber})}
+\renewcommand{\cftsecdotsep}{3}
+\renewcommand\cftsecleader{\bfseries\cftdotfill{\cftsecdotsep}}
+
+\title{Neslužbena rješenja za međuispit \\DisKontNa Matematika 1 2016.\\[2em]
+		\large Za sva pitanja, nedoumice ili nova rješenja slobodno mi pošaljite poruku na FER2.netu. :)\\[2em]}
+\author{\href{mailto:Quentin@fer2.net}{Quentin@fer2.net}}
 
 \begin{document}
+	\maketitle
+	\newpage
+	
 	\tableofcontents
 	\newpage
 	
