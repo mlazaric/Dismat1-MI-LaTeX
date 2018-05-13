@@ -4,26 +4,24 @@
 	\begin{task}
 		Izračunaj sumu
 	
-		\[ \sum\limits_{n=1}^\infty \frac{1}{9n^2 + 15n + 4} \]
+		\[ \sum\limits_{n=1}^\infty \frac{1}{9n^2 + 15n + 4} \] \\[1em]
 	\end{task}
 	
 	Primijenit ćemo metodu teleskopiranja, prvo faktoriziramo nazivnik i rastavimo na parcijalne razlomke.
 	
-	\[ \frac{1}{(3n + 1)(3n + 4)} = \frac{A}{3n + 1} + \frac{B}{3n + 4} \]
+	\[ \frac{1}{(3n + 1)(3n + 4)} = \frac{A}{3n + 1} + \frac{B}{3n + 4} \] \\
 	
 	Pomnožimo sve s \( (3n + 1)(3n + 4) \)
 	
 	\[ 1 = A(3n + 4) + B(3n + 1) \]
 	
 	Iz toga slijedi sustav jednadžbi
-	
 	\begin{align*}
 		0 &= 3A + 3B \\
 		1 &= 4A + B
 	\end{align*}
 	
 	Pa dobijemo
-	
 	\begin{align*}
 		A &= \frac{1}{3} \\
 		B &= - \frac{1}{3}
@@ -31,25 +29,51 @@
 	
 	Onda sređena suma glasi
 	
-	\[ \sum\limits_{n=1}^\infty \left ( \frac{1}{3(3n + 1)} - \frac{1}{3(3n + 4)} \right ) \]
+	\[ \sum\limits_{n=1}^\infty \left ( \frac{1}{3(3n + 1)} - \frac{1}{3(3n + 4)} \right ) \] \\
+	
+	\textbf{1. način: raspisivanje}
 	
 	Izlučimo jednu trećinu i raspišemo za prvih nekoliko i "zadnjih" nekoliko članova kako bismo uočili što će se skratiti.
-	
 	\begin{align*}
 		& \frac{1}{3} \sum\limits_{n=1}^\infty \left ( \frac{1}{3n + 1} - \frac{1}{3n + 4} \right ) \\ 
-		&= \frac{1}{3} \left ( \frac{1}{1} - \frac{1}{4} + \frac{1}{4} - \frac{1}{7} + \cdots + \frac{1}{3n + 1} - \frac{1}{3n + 4} \right )
+		&= \frac{1}{3} \left ( \frac{1}{4} - \frac{1}{7} + \frac{1}{7} - \frac{1}{10} +  + \cdots + \frac{1}{3n + 1} - \frac{1}{3n + 4} \right )
 	\end{align*}
 	
-	Uočimo da će se svi članovi osim \( 1 \) i \( - \frac{1}{3n + 4} \) pokratiti, pa je \( S_n \)
-	
-	
+	Uočimo da će se svi članovi osim \( \frac{1}{4} \) i \( - \frac{1}{3n + 4} \) pokratiti, pa je \( S_n \)
 	\begin{align*}
-		S_n &= \frac{1}{3} \left ( 1 - \frac{1}{3n + 4} \right ) \\
-		&= \frac{1}{3} \cdot \frac{3n + 3}{3n + 4} \\
-		&= \frac{n + 1}{3n + 4}
+		S_n &= \frac{1}{3} \left ( \frac{1}{4} - \frac{1}{3n + 4} \right ) \\
+		&= \frac{1}{3} \frac{3n + 4 - 4}{4(3n + 4)} \\
+		&= \frac{1}{3} \frac{3n}{4(3n + 4)} \\
+		&= \frac{n}{4(3n + 4)}
 	\end{align*}		
 	
 	Riješimo limes od \( S_n \) kada n teži u beskonačnost.
 	
-	\[ S = \lim_{n \to \infty} S_n = \lim_{n \to \infty} \frac{n + 1}{3n + 4} = \frac{1}{3} \]
+	\[ S = \lim_{n \to \infty} S_n = \lim_{n \to \infty} \frac{n}{4(3n + 4)} = \frac{1}{12} \] \\
+	
+	\textbf{2. način: manipulacija suma} 
+	
+	Počinjemo od ovog koraka:	
+	
+	\[ \sum\limits_{n=1}^\infty \left ( \frac{1}{3(3n + 1)} - \frac{1}{3(3n + 4)} \right ) \] 
+	
+	Izlučimo jednu trećinu i odvojimo sume.
+	
+	\[ \frac{1}{3} \left ( \sum\limits_{n=1}^\infty \frac{1}{3n + 1} - \sum\limits_{n=1}^\infty \frac{1}{3n + 4} \right ) \] 
+	
+	Iz prve sume izlučimo član \( n = 1 \).
+	
+	\[ \frac{1}{3} \left ( \frac{1}{4} + \sum\limits_{n=2}^\infty \frac{1}{3n + 1} - \sum\limits_{n=1}^\infty \frac{1}{3n + 4} \right ) \] 
+	
+	Pomaknemo indeks sumacije u prvoj sumi.
+	
+	\[ \frac{1}{3} \left ( \frac{1}{4} + \sum\limits_{n=1}^\infty \frac{1}{3n + 4} - \sum\limits_{n=1}^\infty \frac{1}{3n + 4} \right ) \] 
+	
+	Vratimo sume pod jednu sumu.
+	
+	\[ \frac{1}{3} \left ( \frac{1}{4} + \sum\limits_{n=1}^\infty \left ( \frac{1}{3n + 4} - \frac{1}{3n + 4} \right ) \right ) \] 
+	
+	Izraz u sumi je jednak \( 0 \) za svaki \( n \), pa nam ostaje samo konačan broj koji je ujedno i rješenje.
+	
+	\[ S = \frac{1}{12} \]
 \end{document}

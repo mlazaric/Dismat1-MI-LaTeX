@@ -16,14 +16,19 @@
 
 \theoremstyle{definition}
 \newtheorem{task}{Zadatak}
+\newtheorem{subtask}{Zadatak}[tasknumber]
+
 \newcommand{\tasksection}{
 	\stepcounter{tasknumber}
-	\section{Zadatak \thetasknumber}
+	\phantomsection
+	\addcontentsline{toc}{section}{Zadatak \thetasknumber.}
 }
 \newcommand{\tasksubsection}{
 	\stepcounter{subtasknumber}
-	\subsection{Zadatak \thetasknumber. \alph{subtasknumber})}
+	\phantomsection
+	\addcontentsline{toc}{subsection}{Zadatak \thetasknumber. \alph{subtasknumber})}
 }
+\renewcommand{\thesubtask}{\thetasknumber. \alph{subtasknumber})}
 
 \begin{document}
 	\tableofcontents

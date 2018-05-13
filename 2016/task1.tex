@@ -4,14 +4,14 @@
 	\begin{task}
 		Izračunaj sumu
 	
-		\[ S_n = \frac{3}{2} + \frac{4}{2^2} + \frac{5}{2^3} + \cdots + \frac{n+2}{2^n} \]
-	\end{task}
+		\[ S_n = \frac{3}{2} + \frac{4}{2^2} + \frac{5}{2^3} + \cdots + \frac{n+2}{2^n} \]\\[1em]
+	\end{task} 
 	
 	Pretpostavimo rješenje oblika:
 	
 	\[ S_n = r + q^n P(n) \]
 	
-	gdje je \( P(n) = an + b \) polinom prvog stupnja kao i opći član početne sume, a \( q = \frac{1}{2} \).
+	gdje je \( P(n) = an + b \) polinom prvog stupnja kao i opći član početne sume, a \( q = \frac{1}{2} \). \\
 	
 	Onda vrijedi:
 	
@@ -22,7 +22,6 @@
 	\[ S_{n + 1} = r + 2^{-n-1} (a(n + 1) + b) \]
 	
 	Također vrijedi i
-	
 	\begin{align*}
 		S_{n + 1} &= S_n + a_{n + 1} \\
 		&= S_n + 2^{-n - 1} (n + 1 + 2)  \\
@@ -31,9 +30,9 @@
 	
 	Izjednačimo jednadžbe
 	
-	\[ r + 2^{-n-1} (a(n + 1) + b) = r + 2^{-n} (an + b) + 2^{-n-1} (n + 3) \]
+	\[ r + 2^{-n-1} (a(n + 1) + b) = r + 2^{-n} (an + b) + 2^{-n-1} (n + 3) \] 
 	
-	Pokratimo r
+	Pokratimo \( r \)
 	
 	\[ 2^{-n-1} (a(n + 1) + b) = 2^{-n} (an + b) + 2^{-n-1} (n + 3) \]
 	
@@ -42,21 +41,18 @@
 	\[ a(n + 1) + b = 2 (an + b) +  n + 3 \]
 	
 	Iz toga slijedi sustav jednadžbi
-	
 	\begin{align*}
 		a &= 2a + 1 \\
 		a + b &= 2b + 3
 	\end{align*}
 	
 	Pa dobijemo 
-	
 	\begin{align*}
 		a &= -1 \\
 		b &= -4
 	\end{align*}
 	
 	To uvrstimo natrag u formulu za \( S_n \) i izračunamo \( S_1 \) kako bismo izračunali \( r \).
-	
 	\begin{align*}
 		S_1 &= \frac{3}{2} \\ 
 		\\
