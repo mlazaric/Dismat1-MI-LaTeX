@@ -1,40 +1,94 @@
-\documentclass{article}
+\documentclass[a4paper,a4wide]{article}
 \usepackage{subfiles}
 
 \usepackage[croatian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{tikz}
 
 \usetikzlibrary{math}
 
-\newtheorem{task}{Zadatak}[section]
+\setcounter{secnumdepth}{0}
+\newcounter{tasknumber}
+\newcounter{subtasknumber}[tasknumber]
+
+\theoremstyle{definition}
+\newtheorem{task}{Zadatak}
+\newcommand{\tasksection}{
+	\stepcounter{tasknumber}
+	\section{Zadatak \thetasknumber}
+}
+\newcommand{\tasksubsection}{
+	\stepcounter{subtasknumber}
+	\subsection{Zadatak \thetasknumber. \alph{subtasknumber})}
+}
 
 \begin{document}
 	\tableofcontents
+	\newpage
+	
+	\tasksection
 	\subfile{task1.tex}
 	\newpage
+	
+	\tasksection
 	\subfile{task2.tex}
 	\newpage
+	
+	\tasksection
 	\subfile{task3.tex}
 	\newpage
+	
+	\tasksection
 	\subfile{task4.tex}
 	\newpage
+	
+	\tasksection
+	\tasksubsection
 	\subfile{task5a.tex}
+	\newpage
+	
+	\tasksubsection
 	\subfile{task5b.tex}
+	\newpage
+	
+	\tasksubsection
 	\subfile{task5c.tex}
 	\newpage
+	
+	\tasksection
+	\tasksubsection
 	\subfile{task6a.tex}
+	\newpage
+	
+	\tasksubsection
 	\subfile{task6b.tex}
 	\newpage
+	
+	\tasksection
+	\tasksubsection
 	\subfile{task7a.tex}
 	\newpage
+	
+	\tasksubsection
 	\subfile{task7b.tex}
 	\newpage
+	
+	\tasksubsection
 	\subfile{task7c.tex}
 	\newpage
+	
+	\tasksection
+	\tasksubsection
 	\subfile{task8a.tex}
+	\newpage
+	
+	\tasksubsection
 	\subfile{task8b.tex}
+	\newpage
+	
+	\tasksubsection
 	\subfile{task8c.tex}
 \end{document}
