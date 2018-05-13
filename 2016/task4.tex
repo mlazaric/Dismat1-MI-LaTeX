@@ -7,6 +7,8 @@
 		\[ \binom{n}{0} + 3 \binom{n}{1} + 5 \binom{n}{2} + 7 \binom{n}{3} + \cdots = 2^n (n + 1) \] \\[1em]
 	\end{task}
 	
+	\textbf{1. način}
+	
 	Znamo da će svaki \( \displaystyle \binom{n}{k} \) za koji vrijedi \( k > n \) biti jednak 0. To proizlazi iz formule za binomni koeficijent \( \displaystyle \binom{n}{k} = \frac{n^{\underline{k}}}{k!} \) gdje je \( n^{\underline{k}} = n (n - 1) \cdots (n - k + 1) \), pa za \( k > n\) množimo s nulom. Onda možemo smanjiti beskonačnu sumu na konačnu.
 	
 	\[ \binom{n}{0} + 3 \binom{n}{1} + \cdots + (2n - 1) \binom{n}{n - 1} + (2n + 1) \binom{n}{n} = 2^n (n + 1) \]
@@ -36,5 +38,33 @@
 		(n + 1) 2^n &= 2^n (n + 1)
 	\end{align*}
 	
-	Koristili smo svojstvo \( \sum\limits^n_{k=0} \binom{n}{k} = 2^n \).
+	Koristili smo svojstvo \( \sum\limits^n_{k=0} \binom{n}{k} = 2^n \). 
+	
+	\newpage
+	
+	\textbf{2. način} ideja je od \UkiseljeniKrastavac
+	
+	Započnemo od formule za rastav binoma:
+	
+	\[ (x + 1)^n = \binom{n}{0} + \binom{n}{1} x + \binom{n}{2} x^2 + \cdots + \binom{n}{n} x^n \]
+	
+	Deriviramo tu jednadžbu.
+	
+	\[ n (x + 1)^{n - 1} = \binom{n}{1} + 2 \binom{n}{2} x + \cdots + n \binom{n}{n} x^{n - 1} \]
+	
+	Pomnožimo dobivenu jednadžbu s \( 2 \).
+	
+	\[ 2 n (x + 1)^{n - 1} = 2 \binom{n}{1} + 4 \binom{n}{2} x + \cdots + 2 n \binom{n}{n} x^{n - 1} \]
+	
+	Zbrojimo prvu i zadnju jednadžbu.
+	
+	\[ (x + 1)^n + 2 n (x + 1)^{n - 1} = \binom{n}{0} + 3 \binom{n}{1} x + 5 \binom{n}{2} x^2 + \cdots + (n + 1) \binom{n}{n} x^n \]
+	
+	Uvrstimo \( x = 1 \).
+	
+	\[ 2^n + 2 n \cdot 2^{n - 1} = \binom{n}{0} + 3 \binom{n}{1} + 5 \binom{n}{2} + \cdots + (n + 1) \binom{n}{n} \]
+	
+	Faktoriziramo lijevu stranu i dokazali smo identitet.
+	
+	\[ 2^n (n + 1) = \binom{n}{0} + 3 \binom{n}{1} + 5 \binom{n}{2} + \cdots + (n + 1) \binom{n}{n} \]
 \end{document}
