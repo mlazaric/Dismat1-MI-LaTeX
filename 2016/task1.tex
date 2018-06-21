@@ -7,6 +7,8 @@
 		\[ S_n = \frac{3}{2} + \frac{4}{2^2} + \frac{5}{2^3} + \cdots + \frac{n+2}{2^n} \]\\[1em]
 	\end{task} 
 	
+	\textbf{1. način: univerzalna metoda}
+	
 	Pretpostavimo rješenje oblika:
 	
 	\[ S_n = r + q^n P(n) \]
@@ -62,4 +64,53 @@
 	Konačno rješenje je:
 	
 	\[ S_n = 4 + 2^{-n} (-n -4) \]
+	
+	\newpage
+	
+	\textbf{2. način: deriviranje} (ideju je predložio \UkiseljeniKrastavac)
+	
+	\begin{align*}
+		S_n &= \frac{3}{2} + \frac{4}{2^2} + \frac{5}{2^3} + \cdots + \frac{n+2}{2^n}  \\
+		&= \sum\limits_{k=1}^n \frac{k + 2}{2^k}
+	\end{align*}
+	
+	Definiramo novu sumu.
+	
+	\begin{align*}
+		A_n &= x^3 + x^4 + x^5 + \cdots + x^{n + 2} \\
+		&= \sum\limits_{k=1}^n x^{k + 2}
+	\end{align*}
+	
+	Primijetimo da smo odabrali \( \frac{1}{x^3} \) kao početni član kako bismo deriviranjem dobili \( 3 \) u brojniku. Isto vrijedi za izbor zadnjeg člana, odabrali smo ga kako bismo dobili \( n + 2 \) u brojniku.
+	
+	To je upravo geometrijski niz za koji znamo sumu.
+	
+	\[ A_n = x^3 \frac{1 - x^n}{1 - x} = \frac{x^3 - x^{n + 3}}{1 - x} \]
+	
+	Deriviramo.
+	
+	\begin{align*}
+		\frac{d}{\mathop{dx}} \left ( \sum\limits_{k=1}^n x^{k + 2} \right ) &= \frac{d}{\mathop{dx}} \left ( \frac{x^3 - x^{n + 3}}{1 - x} \right ) \\
+		\sum\limits_{k=1}^n (k + 2) x^{k + 1} &= \frac{(3x^2 - (n + 3)x^{n + 2})(1 - x) + x^3 - x^{n + 3}}{(1 - x)^2}  \\
+		&= \frac{3x^2 - (n + 3)x^{n + 2} - 3x^3 + (n + 3)x^{n + 3} + x^3 - x^{n + 3}}{(1 - x)^2}  \\
+		&= \frac{3x^2 - (n + 3)x^{n + 2} - 2x^3 + (n + 2)x^{n + 3}}{(1 - x)^2}  \\
+		&= \frac{3x^2 - 2x^3 - (n + 3)x^{n + 2} + (n + 2)x^{n + 3}}{(1 - x)^2} 
+	\end{align*}
+	
+	No, mi želimo da nam suma počinje od člana \( x \), a trenutna suma počinje od \( x^2 \), stoga pomnožimo s \( \frac{1}{x} \).
+	
+	\begin{align*}
+		\sum\limits_{k=1}^n (k + 2) x^k	&= \frac{3x - 2x^2 - (n + 3)x^{n + 1} + (n + 2)x^{n + 2}}{(1 - x)^2} 
+	\end{align*}
+	
+	Jedino što nam je preostalo je uvrstiti \( x = \frac{1}{2} \) i malo srediti.
+	
+	\begin{align*}
+		\sum\limits_{k=1}^n \frac{k + 2}{2^k} &= \frac{\frac{3}{2} - \frac{2}{4} -  \frac{n + 3}{2^{n + 1}} + \frac{n + 2}{2^{n + 2}}}{\frac{1}{4}} \\
+		&= 4 \frac{3 \cdot 2^{n + 1} - 2 \cdot 2^{n} - 2(n + 3) + n + 2}{2^{n + 2}} \\
+		&= 4 \frac{4 \cdot 2^{n} - 2n - 6 + n + 2}{2^{n + 2}} \\
+		&= 4 \frac{\cdot 2^{n+2} - n - 4}{2^{n + 2}} \\
+		&= 4 - \frac{4(n + 4)}{2^{n + 2}} \\
+		&= 4 - \frac{n + 4}{2^n}
+	\end{align*}
 \end{document}
