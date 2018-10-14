@@ -1,0 +1,27 @@
+# .travis.yml was mostly copied from https://malramsay.com/post/compiling_latex_on_travis/
+language: minimal
+cache:
+  directories:
+    - $HOME/.cache/Tectonic
+before_install:
+  # Download and install conda
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
+  - bash $HOME/miniconda.sh -b -u -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+
+    # Install tectonic
+  - conda install -y -c conda-forge tectonic==0.1.8
+script:
+  - cd 2016
+  - tectonic -o .. exam.tex
+  - cd ..
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: Z7EpkjpC2IGDd4H7UEo2O/fL+Plj9W+nErz1g5mYpvioHFeaQusJGlXiwIijAvJDzrofTmc8fPEwSbN1QzAwJjRGDeWJ3JzaUDN7au38ASqL2mrYoApeV/w7wVRzKX1EzK23T0Wf8mnXZlBPe+IV8QPE8PlXQ4TizhHbNNiPi5fmNfYLRIi9zZw0GnCjgEJ+5GkcAZdzh74hzThMjOK88oCiK59BvZhbTU3eMkj6Pyt71119GtK03DL6bbuxxHrQZ5Xw0yvuwMvSl1UaQO4fqy2lPAUWgT9+Q+hi6hTX3Zn6Rz/wgtg98eoAQCpR7mjvh+nS5PEtRpxQXvzsPoa/AqzRC1fE4ylMKGMDzz8iaQwxfWWW0f7tMfAJcbOu4Era0ZlHl2RzP+R56od3o3NdvTgXS5sGjtf2TORGmXgWwy/sI5P/uprvo/aMHnW7NYnlArktEFnerK55nTb494UjKw5ecPQ3UeH/UUbSDxVv49q2/2Uc+mgGEgL/vk0AE5kKp+W0yrFbVcE9lkKvtJmWxUK7T1TqUiVFRigBA6uFpYw4r5V78YL7ThMA+f2FFLpjzBSpO4fB30Vk383hK3oWDJuhzmsi3PI+qwpZ+tOQvU871J13ixR26S0AChkA4CCJdW2ftQmX4aCzN7GXaAZV8XEiYBq1LamxyzG4Cz/Exzs=
+  file: exam.pdf
+  on:
+    repo: mlazaric/Dismat1-MI-LaTeX
+    tags: true
